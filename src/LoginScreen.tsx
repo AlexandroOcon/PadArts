@@ -1,6 +1,6 @@
-// screens/LoginScreen.js
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -17,6 +17,13 @@ function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <View style={styles.logoContainer}>
+        <Image
+          source={require('../img/Logo.jpg')}
+          style={styles.logo}
+        />
+        <View style={styles.space} />
+      </View>
       <View style={styles.loginBox}>
         <Text style={styles.title}>Login</Text>
         <TextInput
@@ -35,12 +42,16 @@ function LoginScreen({ navigation }) {
           secureTextEntry
           autoCapitalize="none"
         />
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-          <Text style={styles.registerText}>Crear una cuenta</Text>
+          <Text style={styles.createaccount}>Crear una cuenta</Text>
         </TouchableOpacity>
+      </View>
+      <View style={styles.button2}>
+        <Ionicons name="logo-google" size={24} color="black" style={{ marginRight: 10 }} />
+        <Text style={{ color: "black" }}>Iniciar con Google</Text>
       </View>
     </View>
   );
@@ -52,6 +63,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 16,
+    backgroundColor: '#f5f5f5',
+  },
+  logoContainer: {
+    alignItems: 'center',
+    marginBottom: 20, // Añadir margen inferior para espacio entre el logo y el formulario
+  },
+  logo: {
+    width: 100, // Ajustar el tamaño del logo según sea necesario
+    height: 100, // Ajustar el tamaño del logo según sea necesario
+    resizeMode: 'contain',
+  },
+  space: {
+    height: 20, // Añadir un espacio vertical entre el logo y el formulario
   },
   loginBox: {
     width: '80%',
@@ -79,7 +103,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button: {
-    backgroundColor: 'blue',
+    backgroundColor: 'black',
     paddingVertical: 10,
     borderRadius: 5,
     marginTop: 16,
@@ -89,10 +113,25 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
   },
-  registerText: {
+  createaccount: {
     marginTop: 16,
     color: 'blue',
     textAlign: 'center',
+  },
+  button2: {
+    width: '50%',
+    backgroundColor: 'white',
+    paddingVertical: 10,
+    borderRadius: 5,
+    marginTop: 16,
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 5, height: 5 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
   },
 });
 
