@@ -69,4 +69,6 @@ module.exports = [
   'strapi::favicon',
   'strapi::public',
 ];
-
+```
+# El repositorio me fallo
+Pero aqui dejo un link de drive: [Drive PadArt](https://drive.google.com/file/d/1MyRAQ94WE3RU2mhNx_RTR2mccRQfUHkq/view?usp=sharing)
