@@ -23,6 +23,30 @@ Este proyecto utiliza Strapi como su backend. Para instalar Strapi, sigue estos 
 ## Configuración de la conexión a Strapi en tu proyecto React Native
 
 En tu proyecto React Native, necesitarás hacer los siguientes cambios para conectar tu proyecto a tu instancia de Strapi:
+```javascript
+module.exports = [
+  'strapi::errors',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: '*',
+      origin: ['http://localhost:8081'], // Cambia esto a la URL de tu aplicación móvil
+    //Si quieres cambiar a tu celular usa exp://192.168.100.6:8081
+    },
+  },
+  'strapi::security',
+  'strapi::poweredBy',
+  'strapi::logger',
+  'strapi::query',
+  'strapi::body',
+  'strapi::session',
+  'strapi::favicon',
+  'strapi::public',
+];
+```
+## Demostracion
+En el siguiente video mostrare las funciones que realiza mi codigo: [Video](https://www.youtube.com/watch?v=8tUrLx6-ceI)
 
 ```javascript
 // En el archivo middlewares.js en tu proyecto Strapi, asegúrate de cambiar la configuración de CORS para permitir el acceso desde tu aplicación móvil.
