@@ -7,5 +7,5 @@ Luego lo que se necesita es instalar Strapi aqui les dejare el link de la instal
 Esto por que no es muy facil de exportar y importar por eso tuve que hacerlo en otro git.
 
 
-Ademas les dejare un video explicando lo que hace aqui mismo: 
+Ademas les dejare un video explicando lo que hace aqui mismo: https://www.youtube.com/watch?v=8tUrLx6-ceI
 
